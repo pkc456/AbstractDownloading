@@ -71,11 +71,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FICImageCacheDelegate {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
             
             let requestURL = entity.sourceImageURLWithFormatName(formatName)
-            let sourceImage = UIImage(data: NSData(contentsOfURL: requestURL)!)
+            if let dataFromUrl = NSData(contentsOfURL: requestURL) {
+                let sourceImage = UIImage(data: dataFromUrl)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    completionBlock(sourceImage)
+                })
+            }else{
+//                completionBlock(nil)
+                print("pkc456, data NAHI hai")
+            }
             
-            dispatch_async(dispatch_get_main_queue(), {
-                completionBlock(sourceImage)
-            })
+            
+            
         }
     }
     

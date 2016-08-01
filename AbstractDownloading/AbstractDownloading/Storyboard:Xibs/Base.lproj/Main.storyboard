@@ -17,36 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XUL-8x-X5b">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XUL-8x-X5b">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" id="ykj-R5-cyL" customClass="ViewControllerTableCell" customModule="AbstractDownloading" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ykj-R5-cyL" id="Gfl-Bx-ANg">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ysJ-nM-09d">
-                                                    <rect key="frame" x="223" y="1" width="44" height="42"/>
-                                                    <color key="backgroundColor" red="1" green="0.21852870461921681" blue="0.13894737473312169" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="20" y="1" width="150" height="68"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-uu-NdS">
-                                                    <rect key="frame" x="162" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="195" y="18" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbp-7y-xPc">
+                                                    <rect key="frame" x="71" y="11" width="48" height="48"/>
+                                                    <state key="normal" image="close.png"/>
+                                                    <connections>
+                                                        <action selector="btnCrossAction:" destination="ykj-R5-cyL" eventType="touchUpInside" id="2r5-4Z-qUg"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ysJ-nM-09d" secondAttribute="trailing" constant="53" id="C6T-pJ-W7s"/>
+                                                <constraint firstItem="kbp-7y-xPc" firstAttribute="centerX" secondItem="ysJ-nM-09d" secondAttribute="centerX" id="5Vg-tl-LbF"/>
+                                                <constraint firstAttribute="trailing" secondItem="ysJ-nM-09d" secondAttribute="trailing" constant="150" id="C6T-pJ-W7s"/>
                                                 <constraint firstItem="ysJ-nM-09d" firstAttribute="top" secondItem="Gfl-Bx-ANg" secondAttribute="top" constant="1" id="Oox-Pa-ENb"/>
                                                 <constraint firstAttribute="bottom" secondItem="ysJ-nM-09d" secondAttribute="bottom" id="Y9Q-iG-Kbr"/>
-                                                <constraint firstItem="ysJ-nM-09d" firstAttribute="leading" secondItem="Gfl-Bx-ANg" secondAttribute="leading" constant="223" id="ZqS-9o-zbc"/>
+                                                <constraint firstItem="ysJ-nM-09d" firstAttribute="leading" secondItem="Gfl-Bx-ANg" secondAttribute="leading" constant="20" id="ZqS-9o-zbc"/>
+                                                <constraint firstItem="kbp-7y-xPc" firstAttribute="centerY" secondItem="ysJ-nM-09d" secondAttribute="centerY" id="pOC-PH-8Wd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonCross" destination="kbp-7y-xPc" id="TUS-6F-nl0"/>
                                             <outlet property="customImageView" destination="ysJ-nM-09d" id="THQ-2e-LIb"/>
                                         </connections>
                                     </tableViewCell>
@@ -75,4 +84,7 @@
             <point key="canvasLocation" x="404" y="343"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close.png" width="48" height="48"/>
+    </resources>
 </document>
