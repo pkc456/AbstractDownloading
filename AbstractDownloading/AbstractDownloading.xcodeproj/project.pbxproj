@@ -13,6 +13,8 @@
 		412E004C1D4E75B40031627C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412E004A1D4E75B40031627C /* Main.storyboard */; };
 		412E004E1D4E75B40031627C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412E004D1D4E75B40031627C /* Assets.xcassets */; };
 		412E00511D4E75B40031627C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412E004F1D4E75B40031627C /* LaunchScreen.storyboard */; };
+		7331F8A51D4F553200293D1A /* ViewControllerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7331F8A41D4F553200293D1A /* ViewControllerTableCell.swift */; };
+		7331F8A81D4F56A400293D1A /* FICDPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7331F8A71D4F56A400293D1A /* FICDPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		412E00521D4E75B40031627C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		412E00581D4E7A8C0031627C /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		627F3238FA3DE9294213E369 /* Pods-AbstractDownloading.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbstractDownloading.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbstractDownloading/Pods-AbstractDownloading.debug.xcconfig"; sourceTree = "<group>"; };
+		7331F8A41D4F553200293D1A /* ViewControllerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableCell.swift; sourceTree = "<group>"; };
+		7331F8A61D4F56A400293D1A /* FICDPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICDPhoto.h; sourceTree = "<group>"; };
+		7331F8A71D4F56A400293D1A /* FICDPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICDPhoto.m; sourceTree = "<group>"; };
 		F3FC446C9C299122FC2FE9B0 /* Pods_AbstractDownloading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbstractDownloading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -62,6 +67,8 @@
 		412E00451D4E75B40031627C /* AbstractDownloading */ = {
 			isa = PBXGroup;
 			children = (
+				7331F8A61D4F56A400293D1A /* FICDPhoto.h */,
+				7331F8A71D4F56A400293D1A /* FICDPhoto.m */,
 				412E00461D4E75B40031627C /* AppDelegate.swift */,
 				412E00481D4E75B40031627C /* ViewController.swift */,
 				412E004A1D4E75B40031627C /* Main.storyboard */,
@@ -69,6 +76,7 @@
 				412E004F1D4E75B40031627C /* LaunchScreen.storyboard */,
 				412E00521D4E75B40031627C /* Info.plist */,
 				412E00581D4E7A8C0031627C /* BridgingHeader.h */,
+				7331F8A41D4F553200293D1A /* ViewControllerTableCell.swift */,
 			);
 			path = AbstractDownloading;
 			sourceTree = "<group>";
@@ -97,12 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 412E00551D4E75B40031627C /* Build configuration list for PBXNativeTarget "AbstractDownloading" */;
 			buildPhases = (
-				CCF96186033B8DD0AF7BC535 /* 📦 Check Pods Manifest.lock */,
+				CCF96186033B8DD0AF7BC535 /* [CP] Check Pods Manifest.lock */,
 				412E003F1D4E75B40031627C /* Sources */,
 				412E00401D4E75B40031627C /* Frameworks */,
 				412E00411D4E75B40031627C /* Resources */,
-				4DCFEFC476AF7F6C1AF16A78 /* 📦 Embed Pods Frameworks */,
-				D2E1ABEF90B73054D7B3C626 /* 📦 Copy Pods Resources */,
+				4DCFEFC476AF7F6C1AF16A78 /* [CP] Embed Pods Frameworks */,
+				D2E1ABEF90B73054D7B3C626 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,14 +168,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DCFEFC476AF7F6C1AF16A78 /* 📦 Embed Pods Frameworks */ = {
+		4DCFEFC476AF7F6C1AF16A78 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,14 +183,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbstractDownloading/Pods-AbstractDownloading-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CCF96186033B8DD0AF7BC535 /* 📦 Check Pods Manifest.lock */ = {
+		CCF96186033B8DD0AF7BC535 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,14 +198,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D2E1ABEF90B73054D7B3C626 /* 📦 Copy Pods Resources */ = {
+		D2E1ABEF90B73054D7B3C626 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				412E00491D4E75B40031627C /* ViewController.swift in Sources */,
+				7331F8A51D4F553200293D1A /* ViewControllerTableCell.swift in Sources */,
+				7331F8A81D4F56A400293D1A /* FICDPhoto.m in Sources */,
 				412E00471D4E75B40031627C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

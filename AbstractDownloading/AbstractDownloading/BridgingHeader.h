@@ -9,11 +9,7 @@
 #ifndef BridgingHeader_h
 #define BridgingHeader_h
 
-//#import "FICDAppDelegate.h"
-#import <FastImageCache/FICImageCache.h>
-//#import <FastImageCache/FICDPhoto.h>
-//#import "FICImageCache.h"
-//#import "FICDViewController.h"
-//#import "FICDPhoto.h"
+//#import <FastImageCache/FICImageCache.h>
+#import "FICDPhoto.h"
 
 #endif /* BridgingHeader_h */

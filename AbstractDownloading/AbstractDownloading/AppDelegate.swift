@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import FastImageCache
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, FICImageCacheDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.setUpFastImageCache()
         return true
     }
 
@@ -42,14 +45,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setUpFastImageCache(){
-        var mutableImageFormats = NSMutableArray()
+//        var mutableImageFormats = NSMutableArray()
         
         // Square image formats...
-        let squareImageFormatMaximumCount = 400
-        let squareImageFormatDevices = FICImageFormatDevicePhone
-//        FICImageFormatDevices squareImageFormatDevices = FICImageFormatDevicePhone | FICImageFormatDevicePad;
+//        let squareImageFormatMaximumCount = 400
+//        let squareImageFormatDevices = FICImageFormatDevicePhone
+
+        
+        let mediumUserThumbnailImageFormat = FICImageFormat()
+        mediumUserThumbnailImageFormat.name = "32BitBGR"
+        mediumUserThumbnailImageFormat.family = "Family"
+        mediumUserThumbnailImageFormat.style = FICImageFormatStyle.Style32BitBGR
+        mediumUserThumbnailImageFormat.imageSize = CGSizeMake(200, 200)
+        mediumUserThumbnailImageFormat.maximumCount = 500
+        mediumUserThumbnailImageFormat.devices = FICImageFormatDevices.Phone
+        
+        let sharedImageCache = FICImageCache.sharedImageCache()
+        sharedImageCache.delegate = self
+        sharedImageCache.setFormats([mediumUserThumbnailImageFormat])
     }
 
-
+    // MARK: FICImageCacheDelegate
+    func imageCache(imageCache: FICImageCache!, wantsSourceImageForEntity entity: FICEntity!, withFormatName formatName: String!, completionBlock: FICImageRequestCompletionBlock!) {
+    
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
+            
+            let requestURL = entity.sourceImageURLWithFormatName(formatName)
+            let sourceImage = UIImage(data: NSData(contentsOfURL: requestURL)!)
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                completionBlock(sourceImage)
+            })
+        }
+    }
+    
 }
-
