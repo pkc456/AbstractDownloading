@@ -45,13 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FICImageCacheDelegate {
     }
     
     func setUpFastImageCache(){
-//        var mutableImageFormats = NSMutableArray()
-        
-        // Square image formats...
-//        let squareImageFormatMaximumCount = 400
-//        let squareImageFormatDevices = FICImageFormatDevicePhone
-
-        
         let mediumUserThumbnailImageFormat = FICImageFormat()
         mediumUserThumbnailImageFormat.name = "32BitBGR"
         mediumUserThumbnailImageFormat.family = "Family"
@@ -78,12 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FICImageCacheDelegate {
                     completionBlock(sourceImage)
                 })
             }else{
-//                completionBlock(nil)
                 print("pkc456, data NAHI hai")
             }
-            
-            
-            
         }
     }
     
